@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+       
+        
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+        section{
+             height: 400px;
+             width: 100%; 
+            background-image: none;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        
+        }
+        
+        section>article{
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 370px;
+            width: 400px;
+            background-color: rgb(207, 172, 82);
+        }
+        section>article>input
+        {
+            border: 2px solid;
+            margin-left: 0.8px;
+            margin-top: 2px;
+            margin-right: 0.8px;
+             height: 50px;
+             width: 98.9%; 
+             border-radius: 10px;
+             background-color: rgb(204, 197, 189);
+             font-weight: bold;
+            
+        }
+        section>article>button{
+            margin: 1.5px ;
+                border: 2px solid;
+                height: 48px;
+                width: 23%;   
+                border-radius: 5px;
+                margin-top: 2px;
+                margin-left: 3.2px;
+                text-decoration: solid;
+                background-color: cadetblue;
+        }
+        #cl{
+            
+            width: 48.5%;
+        }
+        #allc{
+            
+            width: 47.7%;
+        }
+        #eq{
+            
+            width: 98.2%;
+        }
+       section>article>button:hover {
+       cursor: pointer;
+       transition-duration: 0.5s;
+        background: #61bee3;
+}
+center h1{
+    font-size: 30px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(39, 39, 233);
+
+}
+center h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#theme
+{
+    justify-content: space-evenly;
+    display: flex;
+    gap: 1rem;
+   
+}  
+#theme>span{
+    font-size: 26px;
+    font-weight: bold;
+ }
+
+#theme>span:hover{
+          color: red;
+         
+
+}
+    </style>
+</head>
+<body>
+    
+<center>
+  <h1>T H E M E</h1>
+  <div id="theme">
+    <span class="material-symbols-outlined" onclick="light()">
+        light_mode
+                      </span>
+   
+        <span class="material-symbols-outlined" onclick="dark()">
+            dark_mode
+            </span>
+        </div>
+    <br>
+    <br>
+
+        <h2 style="color: rgb(55, 98, 179);">:::=<span style="color: red;">></span>  My <span style="color: cornflowerblue;">Calculator</span> ! <span style="color: red;"><</span>=:::</h2>
+</center>
+
+<section>
+    <article>
+        <input type="text" id="input" placeholder="                                       ENTER VALUE">
+        <br>
+
+    <button onclick="btn(1)">1</button>
+    <button onclick="btn(2)">2</button>
+    <button onclick="btn(3)">3</button>
+    <button onclick="btn('+')">+</button>
+    <br>
+    <button onclick="btn(4)">4</button>
+    <button onclick="btn(5)">5</button>
+    <button onclick="btn(6)">6</button>
+    <button onclick="btn('-')">-</button>
+    <br>
+    <button onclick="btn(7)">7</button>
+    <button onclick="btn(8)">8</button>
+    <button onclick="btn(9)">9</button>
+    <button onclick="btn('*')">*</button>
+    <br>
+    <button onclick="btn(0)">0</button>
+    <button onclick="btn('/')">/</button>
+    <button onclick="btn('%')">%</button>
+    <button onclick="btn('.')">.</button>
+    <br>
+    <button id="cl"  onclick="erase()">C</button> <button id="allc">AC</button>
+    <br>
+    <button id="eq" onclick="equal()">=</button>
+
+    </article>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        
+   function dark(){
+           document.body.style.background ="black";
+           document.body.style.color ="white"
+    }
+    function light(){
+             document.body.style.background="whitesmoke"
+              document.body.style.color ="black"
+    }
+    let input1 = document.getElementById("input")
+    let expression=" "
+
+ function btn(num)
+ {
+    expression = expression + num
+    input1.value = expression
+ }
+ function equal()
+ {
+    input1.value = eval(expression)
+    expression = input1.value
+ }
+
+ function erase()
+ {
+    expression =" "
+    input1.value = expression
+ }
+
+
+    </script>
+</body>
+</html>
